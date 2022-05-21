@@ -1,0 +1,270 @@
+<html>
+   <meta charset='UTF-8'/>
+   <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+   <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+   <head>
+      <title>Hanya Untukmu</title>
+   </head>
+   <style>
+      body{background-color:#101010;font-family: 'Ubuntu', sans-serif;padding: 25px} a{text-decoration:none;}
+      #bodyblur{display:block;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);z-index:-1;transition:all 1s ease;-webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);}
+      @keyframes jj{0%  {opacity:.2} 50% {opacity:.25} 100% {opacity:.2}}
+      #bodyblur img{animation-name:jj;animation-duration: 3s;animation-iteration-count: infinite;}
+      @keyframes leaves {0% {transform: scale(1.0);} 100% {transform: scale(.8);}}
+      #lope, #lopdeg{animation: leaves 1s ease-in-out infinite alternate;-webkit-animation: leaves 1s ease-in-out infinite alternate;}
+      .lovein:hover, .button:hover{transform: scale(.95);}
+      @keyframes kont{0%  {left:-2px; top:0;} 50% {left:2px; top:0px;} 100% {left:-2px; top:0px;}}
+      blockquote{animation-name:kont;animation-duration: 3s;animation-iteration-count: infinite;position:relative;opacity:.8;margin-left:0;margin-right:0; padding:30px 25px;}
+      blockquote{color:#fefefe;text-align:center;font-size:14px;line-height:1.3em;padding:30px 25px 30px 25px; border:1px solid #97999A;border-radius:10px;}
+      #akhiran:hover{opacity:.4;}
+      .lovein{background-color:#ffffff;width:48px;height:48px;font-size:20px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .1s ease;}
+      .lovein svg{width:30px;height:30px;fill:#fefefe}
+      .foto, .content2{display:block;text-align:center;width:100%;height:180px;margin-top:50px;}
+      .foto > *, .content2 > *{display:flex;align-items:center;justify-content:center;margin-top:15px;font-size:18px;color:white}
+      .foto img{opacity:0;height:0;border-radius:10%;transition:all .5s ease;}.foto img:first-child{z-index:1}
+      #idfoto{height:140px;}
+      .contTom{margin:0;margin-left:-500%;transition:all .5s ease;display:flex;align-items:left;list-style:none}
+      .icon{flex-shrink:0; display:inline-block;margin-right:12px; width:18px;height:18px; background-size:cover;background-repeat:no-repeat;background-position:center}
+      .icon.whatsapp{background-image:url("data:image/svg+xml,
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23fefefe'>
+         <g>
+            <path d='M16,2A13,13,0,0,0,8,25.23V29a1,1,0,0,0,.51.87A1,1,0,0,0,9,30a1,1,0,0,0,.51-.14l3.65-2.19A12.64,12.64,0,0,0,16,28,13,13,0,0,0,16,2Zm0,24a11.13,11.13,0,0,1-2.76-.36,1,1,0,0,0-.76.11L10,27.23v-2.5a1,1,0,0,0-.42-.81A11,11,0,1,1,16,26Z'/>
+            <path d='M19.86,15.18a1.9,1.9,0,0,0-2.64,0l-.09.09-1.4-1.4.09-.09a1.86,1.86,0,0,0,0-2.64L14.23,9.55a1.9,1.9,0,0,0-2.64,0l-.8.79a3.56,3.56,0,0,0-.5,3.76,10.64,10.64,0,0,0,2.62,4A8.7,8.7,0,0,0,18.56,21a2.92,2.92,0,0,0,2.1-.79l.79-.8a1.86,1.86,0,0,0,0-2.64Zm-.62,3.61c-.57.58-2.78,0-4.92-2.11a8.88,8.88,0,0,1-2.13-3.21c-.26-.79-.25-1.44,0-1.71l.7-.7,1.4,1.4-.7.7a1,1,0,0,0,0,1.41l2.82,2.82a1,1,0,0,0,1.41,0l.7-.7,1.4,1.4Z'/>
+         </g>
+      </svg>
+      ")}
+      .button{display:inline-flex;align-items:center; margin:0;margin-left:-500%;transition:all .1s ease;padding:10px 15px;outline:0;border:0; border-radius:2px;line-height:20px; color:#fefefe; background-color:#2C57B6; font-size:13px;white-space:nowrap;overflow:hidden;max-width:100%} .button.whatsapp{background-color:#199046}
+      .swal2-title{font-size:18px;text-align:center;padding:15px 30px 0 30px;}
+      /*.swal2-container{top:-60px;}*/
+   </style>
+   <body>
+      <div id="bodyblur"><img src="https://i.postimg.cc/7Y9X8WVX/IMG-20211201-090448-830.jpg" width="100%" height="100%"/></div>
+      </div>
+      <div class="foto" id="idfoto">
+         <div class="image"><img id="ftKm" src="https://i.ibb.co/ph7h61h/mikirin.gif"/></div>
+         <span id="sp1"></span>
+         <div id="sp2" style="display:none;"><span id="text3"></span></div>
+         <div id="sp3" style="display:none;"><span id="text4"></span></div>
+      </div>
+      <div id='Content' style="display:none">
+         <blockquote>
+            <p id="text"></p>
+            <p id="text2"></p>
+            <p id="kata3" style="display:none"></p>
+            <p id="kata31" style="display:none"></p>
+            <p id="kata33" style="display:none"><br><br></p>
+            <p id="akhiran" style="display:none;margin-top:20px;" onClick="mulaiakhir();this.onclick=null;">[ Klik untuk Lanjut &#128157; ]</p>
+         </blockquote>
+      </div>
+      <div id="tombo" class="content2">
+         <div id="lopdeg" class="ct1"><label class='lovein' onClick="mulai();nonTo()">&#10084;&#65039;</label></div>
+         <p style="opacity:.7;font-size:12px;color:white">Klik untuk Memulai Kuis</p>
+      </div>
+      <script>
+         var _0x5df053 = _0x541f;
+         (function(_0x9bb633, _0x375652) {
+             var _0x3db4d0 = _0x541f,
+                 _0x319b1a = _0x9bb633();
+             while (!![]) {
+                 try {
+                     var _0x2ca9a5 = -parseInt(_0x3db4d0(0x130)) / 0x1 + -parseInt(_0x3db4d0(0x144)) / 0x2 * (parseInt(_0x3db4d0(0x133)) / 0x3) + -parseInt(_0x3db4d0(0x137)) / 0x4 + parseInt(_0x3db4d0(0x12a)) / 0x5 + -parseInt(_0x3db4d0(0x138)) / 0x6 + -parseInt(_0x3db4d0(0x121)) / 0x7 + parseInt(_0x3db4d0(0x12d)) / 0x8;
+                     if (_0x2ca9a5 === _0x375652) break;
+                     else _0x319b1a['push'](_0x319b1a['shift']());
+                 } catch (_0x1b4b42) {
+                     _0x319b1a['push'](_0x319b1a['shift']());
+                 }
+             }
+         }(_0x1144, 0x8cb82));
+         
+         function nonTo() {
+             var _0x56d4ec = _0x541f;
+             document[_0x56d4ec(0x12f)](_0x56d4ec(0x139))['style'][_0x56d4ec(0x13b)] = _0x56d4ec(0x132);
+         }
+         
+         function showTo() {
+             var _0x5add4e = _0x541f;
+             document[_0x5add4e(0x12f)]('tombo')[_0x5add4e(0x123)][_0x5add4e(0x13b)] = _0x5add4e(0x122);
+         }
+         
+         function nonDiv() {
+             var _0x51180e = _0x541f;
+             document['getElementById'](_0x51180e(0x13a))[_0x51180e(0x123)][_0x51180e(0x13b)] = _0x51180e(0x132);
+         }
+         
+         function showDiv() {
+             var _0x42c463 = _0x541f;
+             document['getElementById']('Content')[_0x42c463(0x123)]['display'] = _0x42c463(0x122), document[_0x42c463(0x12f)](_0x42c463(0x143))['style'] = 'height:50px;';
+         }
+         
+         function trm() {
+             var _0x315a18 = _0x541f;
+             document[_0x315a18(0x12f)]('trm')[_0x315a18(0x123)]['margin'] = '0';
+         }
+         
+         function whs() {
+             var _0x4304b8 = _0x541f;
+             document[_0x4304b8(0x12f)](_0x4304b8(0x142))[_0x4304b8(0x123)] = _0x4304b8(0x134);
+         }
+         
+         function nowhs() {
+             var _0x486c0d = _0x541f;
+             document[_0x486c0d(0x12f)]('whs')['style'][_0x486c0d(0x126)] = _0x486c0d(0x127);
+         }
+         
+         function iloveu() {
+             var _0x587b84 = _0x541f;
+             u == text2[_0x587b84(0x141)] && (document['getElementById'](_0x587b84(0x124))[_0x587b84(0x123)]['display'] = _0x587b84(0x132), document[_0x587b84(0x12f)](_0x587b84(0x12c))[_0x587b84(0x123)][_0x587b84(0x13b)] = _0x587b84(0x122));
+         }
+         
+         function fotoKt() {
+             var _0x22e32d = _0x541f;
+             document[_0x22e32d(0x12f)]('ftKm')[_0x22e32d(0x123)] = _0x22e32d(0x136), document[_0x22e32d(0x12f)](_0x22e32d(0x143))[_0x22e32d(0x123)] = _0x22e32d(0x129);
+         }
+         async function mulaiakhir() {
+             var _0x1ca19a = _0x541f;
+             kal3(), document[_0x1ca19a(0x12f)](_0x1ca19a(0x13e))[_0x1ca19a(0x123)]['display'] = _0x1ca19a(0x132), document[_0x1ca19a(0x12f)](_0x1ca19a(0x13f))['style'][_0x1ca19a(0x13b)] = 'none', document[_0x1ca19a(0x12f)](_0x1ca19a(0x142))[_0x1ca19a(0x123)][_0x1ca19a(0x13b)] = _0x1ca19a(0x132), document[_0x1ca19a(0x12f)]('kata3')[_0x1ca19a(0x123)][_0x1ca19a(0x13b)] = _0x1ca19a(0x122), document[_0x1ca19a(0x12f)](_0x1ca19a(0x12c))['style'][_0x1ca19a(0x13b)] = _0x1ca19a(0x132), document[_0x1ca19a(0x12f)](_0x1ca19a(0x120))['style'][_0x1ca19a(0x13b)] = _0x1ca19a(0x122);
+         }
+         var i = 0x0,
+             text;
+         text = '';
+         var u = 0x0,
+             text2;
+         text2 = '';
+         
+         function _0x1144() {
+             var _0x7730fc = ['block', 'style', 'sp1', '\x20&#128157;', 'margin', '0\x200\x200\x20-500%', 'text4', 'height:190px;', '2722105kRmVIo', '...\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20', 'sp2', '25592576FXuYPp', 'charAt', 'getElementById', '884252IMgbpw', 'innerHTML', 'none', '2992863GeVMJg', 'display:block;', 'kata3', 'opacity:1;height:150px;width:150px;', '4272872mMkWJn', '1173024RLpGip', 'tombo', 'Content', 'display', 'kata31', 'Jaga\x20diri\x20baik-baik\x20di\x20sana\x20yaaa\x20....\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20', 'text', 'text2', 'Semoga\x20hubungan\x20kita\x20terus\x20bertahan...\x20See\x20you\x20sayanggg\x20\x20\x20\x20\x20\x20\x20\x20', 'length', 'akhiran', 'idfoto', '2AJKmNX', 'text3', 'sp3', '150584TogMPW'];
+             _0x1144 = function() {
+                 return _0x7730fc;
+             };
+             return _0x1144();
+         }
+         var o = 0x0,
+             text3;
+         text3 = _0x5df053(0x12b);
+         var a = 0x0,
+             text4;
+         text4 = 'I\x20Love\x20You';
+         var aa = 0x0,
+             kata3;
+         kata3 = _0x5df053(0x13d);
+         var aaa = 0x0,
+             kata31;
+         kata31 = _0x5df053(0x140);
+         
+         function _0x541f(_0xb5bf89, _0x123efd) {
+             var _0x11444b = _0x1144();
+             return _0x541f = function(_0x541fef, _0x5772cf) {
+                 _0x541fef = _0x541fef - 0x120;
+                 var _0x1601bd = _0x11444b[_0x541fef];
+                 return _0x1601bd;
+             }, _0x541f(_0xb5bf89, _0x123efd);
+         }
+         
+         function kal3() {
+             var _0x4fd83d = _0x5df053;
+             aa < kata3[_0x4fd83d(0x141)] && (document[_0x4fd83d(0x12f)](_0x4fd83d(0x135))[_0x4fd83d(0x131)] += kata3[_0x4fd83d(0x12e)](aa), aa++, setTimeout(kal3, 0x64)), aa == kata3[_0x4fd83d(0x141)] && (kal31(), document[_0x4fd83d(0x12f)](_0x4fd83d(0x13c))[_0x4fd83d(0x123)][_0x4fd83d(0x13b)] = _0x4fd83d(0x122), document[_0x4fd83d(0x12f)](_0x4fd83d(0x135))[_0x4fd83d(0x123)][_0x4fd83d(0x13b)] = _0x4fd83d(0x132));
+         }
+         
+         function kal31() {
+             var _0x5a221e = _0x5df053;
+             aaa < kata31[_0x5a221e(0x141)] && (document[_0x5a221e(0x12f)](_0x5a221e(0x13c))['innerHTML'] += kata31['charAt'](aaa), aaa++, setTimeout(kal31, 0xc8)), aaa == kata31[_0x5a221e(0x141)] && (document[_0x5a221e(0x12f)](_0x5a221e(0x13c))[_0x5a221e(0x131)] = kata31 + emotlove, duar(), fotoKt());
+         }
+         
+         function ketik() {
+             var _0x355289 = _0x5df053;
+             i < text[_0x355289(0x141)] && (document['getElementById']('text')[_0x355289(0x131)] += text[_0x355289(0x12e)](i), i++, setTimeout(ketik, 0x64)), i == text[_0x355289(0x141)] && (document[_0x355289(0x12f)](_0x355289(0x13e))[_0x355289(0x131)] = text + emotlove, ketikk());
+         }
+         
+         function ketikk() {
+             var _0x4ecba3 = _0x5df053;
+             u < text2['length'] && (document['getElementById'](_0x4ecba3(0x13f))[_0x4ecba3(0x131)] += text2[_0x4ecba3(0x12e)](u), u++, setTimeout(ketikk, 0xc8)), u == text2['length'] && (document[_0x4ecba3(0x12f)](_0x4ecba3(0x13f))[_0x4ecba3(0x131)] = text2 + emotcium + emotlove, iloveu(), siap());
+         }
+         async function siap() {
+             var _0x40131b = _0x5df053;
+             o < text3['length'] && (document['getElementById'](_0x40131b(0x145))[_0x40131b(0x131)] += text3[_0x40131b(0x12e)](o), o++, setTimeout(siap, 0x50)), o == text3[_0x40131b(0x141)] && whs();
+         }
+         
+         function duar() {
+             var _0x2987d3 = _0x5df053;
+             a < text4[_0x2987d3(0x141)] && (document[_0x2987d3(0x12f)]('text4')[_0x2987d3(0x131)] += text4[_0x2987d3(0x12e)](a), a++, setTimeout(duar, 0x10e)), a == text4[_0x2987d3(0x141)] && (document[_0x2987d3(0x12f)](_0x2987d3(0x128))[_0x2987d3(0x131)] = text4 + _0x2987d3(0x125));
+         }
+           
+      </script>
+      <script type="text/javascript">
+         const _0x23128a = _0x5434;
+         (function(_0x171f21, _0x2d20a6) {
+             const _0xe622f9 = _0x5434,
+                 _0x36363c = _0x171f21();
+             while (!![]) {
+                 try {
+                     const _0x296a38 = -parseInt(_0xe622f9(0xc6)) / 0x1 + -parseInt(_0xe622f9(0xd8)) / 0x2 * (parseInt(_0xe622f9(0xd7)) / 0x3) + parseInt(_0xe622f9(0xe1)) / 0x4 * (parseInt(_0xe622f9(0xcf)) / 0x5) + parseInt(_0xe622f9(0xdd)) / 0x6 * (parseInt(_0xe622f9(0xd4)) / 0x7) + -parseInt(_0xe622f9(0xce)) / 0x8 * (parseInt(_0xe622f9(0xd2)) / 0x9) + -parseInt(_0xe622f9(0xe0)) / 0xa + parseInt(_0xe622f9(0xd0)) / 0xb;
+                     if (_0x296a38 === _0x2d20a6) break;
+                     else _0x36363c['push'](_0x36363c['shift']());
+                 } catch (_0x27a381) {
+                     _0x36363c['push'](_0x36363c['shift']());
+                 }
+             }
+         }(_0xcc84, 0xee8f3));
+         
+         function play() {
+             const _0x243c28 = _0x5434;
+             var _0x3f0c38 = new Audio(_0x243c28(0xda));
+             _0x3f0c38[_0x243c28(0xd9)]();
+         }
+         const swals = Swal[_0x23128a(0xcd)]({
+                 'allowOutsideClick': ![],
+                 'cancelButtonColor': _0x23128a(0xde)
+             }),
+             swalsy = Swal['mixin']({
+                 'confirmButtonText': _0x23128a(0xca),
+                 'allowOutsideClick': ![]
+             }),
+             swalst = Swal[_0x23128a(0xcd)]({
+                 'allowOutsideClick': ![],
+                 'showConfirmButton': ![],
+                 'timer': 0xdac,
+                 'timerProgressBar': !![]
+             });
+         async function mulai() {
+             const _0x4ddf35 = _0x23128a;
+             var {
+                 value: _0x5ba641
+             } = await swals[_0x4ddf35(0xd6)]({
+                 'title': _0x4ddf35(0xc7),
+                 'input': _0x4ddf35(0xcc),
+                 'allowOutsideClick': ![],
+                 'showCancelButton': ![]
+             });
+             _0x5ba641[_0x4ddf35(0xd3)]() == _0x4ddf35(0xcb) && _0x5ba641[_0x4ddf35(0xc8)] < 0x17 ? (play(), window['nama'] = _0x5ba641['toUpperCase'](), text = _0x4ddf35(0xd1), text2 = 'Oh\x20iya\x20aku\x20mau\x20ngomong...\x20Maaf\x20gabisa\x20jadi\x20cowo\x20yang\x20kamu\x20mau\x20:(\x20...\x20Maaf\x20juga\x20gabisa\x20kasih\x20apa-apa\x20ke\x20kamu\x20...\x20Semoga\x20kamu\x20betah\x20ya\x20sama\x20cowo\x20jelek\x20ini\x20:(\x20...\x20I\x20Love\x20U\x20\x20\x20\x20\x20', emotlove = _0x4ddf35(0xc9), emotcium = '&#128536;', lanjutaja()) : (await swals['fire'](_0x4ddf35(0xd5), _0x4ddf35(0xdc)), mulai());
+         }
+         
+         function _0x5434(_0x186923, _0x349bf1) {
+             const _0xcc8435 = _0xcc84();
+             return _0x5434 = function(_0x543479, _0x386cb3) {
+                 _0x543479 = _0x543479 - 0xc6;
+                 let _0x3cca57 = _0xcc8435[_0x543479];
+                 return _0x3cca57;
+             }, _0x5434(_0x186923, _0x349bf1);
+         }
+         
+         function _0xcc84() {
+             const _0x5465f9 = ['Ayaaanggg\x20<3\x20\x20\x20\x20\x20', '1371105BMQiZn', 'toLowerCase', '41363OyKeLK', 'Ups!', 'fire', '5264751gqttGy', '2YtqeLz', 'play', 'https://buatmu.feeldream.repl.co/fafa.mp3', 'Lihat\x20sampai\x20akhir\x20ya!', 'Isi\x20dengan\x20nama\x20lengkap\x20kamu', '138QsffPM', '#FF0040', 'sp1', '10640210rrSvNu', '328oQKJUQ', '1329750FglcqO', 'Masukin\x20nama\x20lengkap\x20kamu', 'length', '&#10084;', 'Iya', 'paramita\x20nuraida\x20utami', 'text', 'mixin', '48GxtmPB', '1990qHGulj', '64584894OsDrLD'];
+             _0xcc84 = function() {
+                 return _0x5465f9;
+             };
+             return _0xcc84();
+         }
+         async function lanjutaja() {
+             const _0x5e13b6 = _0x23128a;
+             await swalst[_0x5e13b6(0xd6)]({
+                 'title': _0x5e13b6(0xdb),
+                 'text': 'Jangan\x20lupa\x20besarin\x20volume-nya\x20juga\x20biar\x20denger\x20musiknya\x20:)'
+             }), document['getElementById'](_0x5e13b6(0xdf))['innerHTML'] = nama + '\x20&#128155;', ketik(), showDiv();
+         }
+      </script>
+   </body>
+</html>
